@@ -2,6 +2,9 @@
 
 A Vue.js application that allows users to translate text between different languages using the Google Translate API.
 
+## Live Demo
+Visit the live application at: [https://shubhangsudhansu.github.io/translate-app/](https://shubhangsudhansu.github.io/translate-app/)
+
 ## Features
 
 - Translate text between multiple languages
