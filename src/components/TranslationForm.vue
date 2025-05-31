@@ -47,7 +47,16 @@
     </button>
 
     <div v-if="error" class="error-message">
-      {{ error }}
+      <p>{{ error }}</p>
+      <p v-if="error.includes('API key')" class="error-help">
+        Please make sure you have:
+        <ul>
+          <li>Created a Google Cloud project</li>
+          <li>Enabled the Cloud Translation API</li>
+          <li>Created an API key with proper permissions</li>
+          <li>Added the API key to your .env file</li>
+        </ul>
+      </p>
     </div>
 
     <div v-if="translatedText" class="result">
@@ -174,10 +183,25 @@ button:disabled {
 
 .error-message {
   margin-top: 15px;
-  padding: 10px;
+  padding: 15px;
   background-color: #ffebee;
   color: #c62828;
   border-radius: 4px;
   border: 1px solid #ffcdd2;
+}
+
+.error-help {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.error-help ul {
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.error-help li {
+  margin: 3px 0;
 }
 </style> 
